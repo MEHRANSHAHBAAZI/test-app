@@ -4,5 +4,3 @@ def sum():
     num2 = int(input("enter your second number: "))
     print (num1+num2)
 sum()
-
-
