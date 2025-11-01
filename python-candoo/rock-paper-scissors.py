@@ -4,14 +4,22 @@ def main():
     counter_user = 0
     counter_computer = 0
     for i in range(3):
-        var_user = input("enter rock , paper , scissors: ")
         list = ["rock", "paper", "scissors"]
+        while True:
+            try:
+                user = input("enter 1.rock , 2.paper , 3.scissors : ")
+                if user not in list:
+                    raise ValueError("Invalid input")
+                break
+            except ValueError:
+                print("Please enter a valid choice: rock, paper, or scissors.")
+                continue
         var_choice = choice(list)
         print(var_choice)
 
-        if var_user == var_choice:
+        if user == var_choice:
             print("draw")
-        elif ((var_user == "rock" and var_choice == "scissors") or (var_user == "paper" and var_choice == "rock") or (var_user == "scissors" and var_choice == "paper")):
+        elif ((user == "rock" and var_choice == "scissors") or (user == "paper" and var_choice == "rock") or (user == "scissors" and var_choice == "paper")):
             print("user win")
             counter_user += 1
         else:
