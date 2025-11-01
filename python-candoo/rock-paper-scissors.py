@@ -8,6 +8,7 @@ def main():
         list = ["rock", "paper", "scissors"]
         var_choice = choice(list)
         print(var_choice)
+
         if var_user == var_choice:
             print("draw")
         elif ((var_user == "rock" and var_choice == "scissors") or (var_user == "paper" and var_choice == "rock") or (var_user == "scissors" and var_choice == "paper")):
@@ -16,12 +17,14 @@ def main():
         else:
             print("computer win")
             counter_computer += 1
+            
     return (counter_user, counter_computer)
-c_u, c_p = main()
-print(c_u , c_p)
-if c_u > c_p:
+
+counter_user, counter_computer = main()
+print(counter_user, counter_computer)
+if counter_user > counter_computer:
     print ("user is the winner")
-elif c_u == c_p :
+elif counter_user == counter_computer:
     print ("user and computer are draw")
 else:
     print ("computer is winner")
